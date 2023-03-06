@@ -3,7 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+<!--将指定的类配置给Spring,让Spring容器创建其实例-->
 <!--    适用于全局创建对象从而减少过多创建对象-->
     <bean id="userDao" class="top.hjh.spring.ioc.UserDaoImpl"/>
+    <bean id="userService" class="top.hjh.spring.ioc.UserServiceImpl">
+<!--        将id为 userDao 的Bean实例注入到userService实例-->
+<!--        引用类型用ref-->
+        <property name="userDao" ref="userDao"/>
+<!--        基本类型以及String用value-->
+        <property name="app" value="你好"></property>
+    </bean>
 </beans>

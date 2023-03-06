@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="MyBean3Factory" class="top.hjh.spring.ioc.instance.factory.MyBean3Factory" ></bean>
+<!--     先把工厂类配好-->
+
+    <bean id="bean3"  factory-bean="MyBean3Factory" factory-method="createBean"></bean>
+</beans>

@@ -13,4 +13,72 @@
 <!--        基本类型以及String用value-->
         <property name="app" value="你好"></property>
     </bean>
+
+
+
+<!--    动物-->
+    <bean id="Cat" class="top.hjh.spring.ioc.test1.Cat">
+       <property name="name" value="喵喵"></property>
+        <property name="age" value="1"></property>
+    </bean>
+
+    <bean id="Dog" class="top.hjh.spring.ioc.test1.Dog">
+        <constructor-arg name="name" value="汪汪"></constructor-arg>
+        <constructor-arg name="age" value="2"></constructor-arg>
+    </bean>
+
+
+<!--    图书-->
+    <bean id="Book1" class="top.hjh.spring.ioc.test2.Book">
+        <constructor-arg name="bookName" value="倚天屠龙记"></constructor-arg>
+        <constructor-arg name="id" value="1"></constructor-arg>
+        <constructor-arg name="price" value="200"></constructor-arg>
+    </bean>
+
+    <bean id="Book2" class="top.hjh.spring.ioc.test2.Book">
+    </bean>
+
+
+<!--    穿衣服-->
+    <bean id="Clothes1" class="top.hjh.spring.ioc.test3.Clothes">
+        <property name="color" value="红色"></property>
+        <property name="style" value="连衣裙"></property>
+    </bean>
+    <bean id="Clothes2" class="top.hjh.spring.ioc.test3.Clothes">
+        <property name="color" value="蓝色"></property>
+        <property name="style" value="小西装"></property>
+    </bean>
+    <bean id="Person1" class="top.hjh.spring.ioc.test3.Person">
+        <property name="name" value="女孩"> </property>
+        <property name="clothes" ref="Clothes1"></property>
+    </bean>
+    <bean id="Person2" class="top.hjh.spring.ioc.test3.Person">
+        <property name="name" value="男孩"> </property>
+        <property name="clothes" ref="Clothes2"></property>
+    </bean>
+
+<!--    文具-->
+    <bean id="Pen1" class="top.hjh.spring.ioc.test4.Pen">
+        <property name="name"   value="钢笔"></property>
+    </bean>
+
+    <bean id="Pen2" class="top.hjh.spring.ioc.test4.Pen">
+        <property name="name"   value="铅笔"></property>
+    </bean>
+
+    <bean id="Pen3" class="top.hjh.spring.ioc.test4.Pen">
+        <property name="name"   value="毛笔"></property>
+    </bean>
+
+    <bean id="SchoolBag" class="top.hjh.spring.ioc.test4.SchoolBag">
+        <property name="color" value="红色"></property>
+        <property name="pencilCase">
+            <list>
+                <ref bean="Pen1"></ref>
+                <ref bean="Pen2"></ref>
+                <ref bean="Pen3"></ref>
+            </list>
+        </property>
+    </bean>
+
 </beans>
